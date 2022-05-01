@@ -1,11 +1,11 @@
 var app = require('express')();
 var http = require('http').createServer(app);
-var io = require('socket.io')(http);
-// const io = require('socket.io')(http, {
-//       cors: {
-//         origin: '*',
-//       }
-//     });
+// var io = require('socket.io')(http);
+const io = require('socket.io')(http, {
+      cors: {
+        origin: '*',
+      }
+    });
 
 io.on('connection', (socket)=> {
       console.log('User Online');
